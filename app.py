@@ -120,7 +120,7 @@ alcohol = form.slider(
 submit_button = form.form_submit_button("Predict")
 
 
-iif submit_button:
+if submit_button:
     input_data = [[fixed_acidity, volatile_acidity, citric_acid, residual_sugar,
                    chlorides, free_sulfur_dioxide, total_sulfur_dioxide,
                    density, pH, sulphates, alcohol]]
@@ -132,6 +132,7 @@ iif submit_button:
         st.success("Predicted Quality: Good Quality")   # green
     else:
         st.error("Predicted Quality: Bad Quality")      # red
+
 
 
 
