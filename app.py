@@ -18,7 +18,7 @@ form = st.form("wine Quality form")
 
 form.subheader("Enter Score")
 
-Fixed acidity = form.number_input(
+fixed acidity = form.number_input(
 
 		"Fixed_acidity ",
 		min_value= 4.0,
@@ -127,3 +127,4 @@ if submit_button:
 	st.subheader("Prediction Result")
 
 	st.success(f" Predicted species: {prediction[0]}")
+
