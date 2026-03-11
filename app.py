@@ -20,7 +20,7 @@ form = st.form("wine Quality form")
 
 form.subheader("Enter Score")
 
-fixed_acidity = form.number_input(
+fixed_acidity = form.slider(
 
 		"Fixed_acidity ",
 		min_value= 4.0,
@@ -29,7 +29,7 @@ fixed_acidity = form.number_input(
 
 	)
 
-volatile_acidity = form.number_input(
+volatile_acidity = form.slider(
 
 		"volatile acidity",
 		min_value= 0.0,
@@ -38,7 +38,7 @@ volatile_acidity = form.number_input(
 
 	)
 
-citric_acid = form.number_input(
+citric_acid = form.slider(
 
 		"citric acid",
 		min_value= 0.0,
@@ -130,6 +130,7 @@ if submit_button:
     result = "Good Quality" if prediction[0] == 1 else "Bad Quality"
 
     st.success(f"Predicted Quality: {result}")
+
 
 
 
