@@ -27,7 +27,7 @@ fixed_acidity = form.number_input(
 
 	)
 
-volatile acidity = form.number_input(
+volatile_acidity = form.number_input(
 
 		"volatile acidity",
 		min_value= 0.0,
@@ -36,7 +36,7 @@ volatile acidity = form.number_input(
 
 	)
 
-citric acid = form.number_input(
+citric_acid = form.number_input(
 
 		"citric acid",
 		min_value= 0.0,
@@ -45,7 +45,7 @@ citric acid = form.number_input(
 
 	)
 
-residual sugar = form.number_input(
+residual_sugar = form.number_input(
 
 		"residual sugar",
 		min_value= 1.0,
@@ -62,7 +62,7 @@ chlorides = form.number_input(
 
 	)
 
-free sulfur dioxide = form.number_input(
+free_sulfur_dioxide = form.number_input(
 
 		"free sulfur dioxide",
 		min_value= 5.0,
@@ -71,7 +71,7 @@ free sulfur dioxide = form.number_input(
 
 	)
 
-total sulfur dioxide = form.number_input(
+total_sulfur_dioxide = form.number_input(
 
 		"total sulfur dioxide",
 		min_value= 20.0,
@@ -127,5 +127,6 @@ if submit_button:
 	st.subheader("Prediction Result")
 
 	st.success(f" Predicted species: {prediction[0]}")
+
 
 
