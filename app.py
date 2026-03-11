@@ -119,12 +119,15 @@ submit_button = form.form_submit_button("Predict")
 
 
 if submit_button:
-	input_data = [[fixed acidity, volatile acidity,citric acid,residual sugar,chlorides,free sulfur dioxide,total sulfur dioxide,density,pH,sulphates,alcohol]]
+input_data = [[fixed_acidity, volatile_acidity, citric_acid, residual_sugar,
+               chlorides, free_sulfur_dioxide, total_sulfur_dioxide,
+               density, pH, sulphates, alcohol]]
 	prediction = model.predict(input_data)
 	
 	st.subheader("Prediction Result")
 
 	st.success(f" Predicted score: {prediction[0]}")
+
 
 
 
