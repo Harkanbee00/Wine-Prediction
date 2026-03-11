@@ -125,8 +125,10 @@ if submit_button:
 	prediction = model.predict(input_data)
 	
 	st.subheader("Prediction Result")
+	result = "Good Quality" if prediction[0] == 1 else "Bad Quality"
 
-	st.success(f" Predicted score: {prediction[0]}")
+	st.success(f" Predicted Quality: {prediction[result]}")
+
 
 
 
