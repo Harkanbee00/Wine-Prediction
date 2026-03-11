@@ -47,7 +47,7 @@ citric_acid = form.slider(
 
 	)
 
-residual_sugar = form.number_input(
+residual_sugar = form.slider(
 
 		"residual sugar",
 		min_value= 1.0,
@@ -55,7 +55,7 @@ residual_sugar = form.number_input(
 		value = 1.4
 
 	)
-chlorides = form.number_input(
+chlorides = form.slider(
 
 		"chlorides ",
 		min_value= 0.005,
@@ -64,7 +64,7 @@ chlorides = form.number_input(
 
 	)
 
-free_sulfur_dioxide = form.number_input(
+free_sulfur_dioxide = form.slider(
 
 		"free sulfur dioxide",
 		min_value= 5.0,
@@ -73,14 +73,14 @@ free_sulfur_dioxide = form.number_input(
 
 	)
 
-total_sulfur_dioxide = form.number_input(
+total_sulfur_dioxide = form.slider(
 
 		"total sulfur dioxide",
 		min_value= 20.0,
 		max_value= 100.0,
 		value = 30.0
 	)
-density = form.number_input(
+density = form.slider(
 
 		"density ",
 		min_value= 0.0001,
@@ -89,7 +89,7 @@ density = form.number_input(
 
 	)
 
-pH = form.number_input(
+pH = form.slider(
 
 		"pH acidity",
 		min_value= 2.0,
@@ -98,7 +98,7 @@ pH = form.number_input(
 
 	)
 
-sulphates = form.number_input(
+sulphates = form.slider(
 
 		"sulphates",
 		min_value= 0.1,
@@ -107,7 +107,7 @@ sulphates = form.number_input(
 
 	)
 
-alcohol = form.number_input(
+alcohol = form.slider(
 
 		"alcohol",
 		min_value = 5.0,
@@ -120,16 +120,20 @@ alcohol = form.number_input(
 submit_button = form.form_submit_button("Predict")
 
 
-if submit_button:
+iif submit_button:
     input_data = [[fixed_acidity, volatile_acidity, citric_acid, residual_sugar,
                    chlorides, free_sulfur_dioxide, total_sulfur_dioxide,
                    density, pH, sulphates, alcohol]]
     prediction = model.predict(input_data)
     
     st.subheader("Prediction Result")
-    result = "Good Quality" if prediction[0] == 1 else "Bad Quality"
+    
+    if prediction[0] == 1:
+        st.success("Predicted Quality: Good Quality")   # green
+    else:
+        st.error("Predicted Quality: Bad Quality")      # red
 
-    st.success(f"Predicted Quality: {result}")
+
 
 
 
