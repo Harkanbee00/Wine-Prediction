@@ -1,6 +1,8 @@
-import streamlit as st 
-import pandas as pd
 import joblib
+import streamlit as st
+import numpy as np
+import pandas as pd
+
 
 
 
@@ -128,6 +130,7 @@ if submit_button:
 	result = "Good Quality" if prediction[0] == 1 else "Bad Quality"
 
 	st.success(f" Predicted Quality: {prediction[result]}")
+
 
 
 
